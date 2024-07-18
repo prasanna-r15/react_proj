@@ -22,7 +22,7 @@
         .upgrade{
             font-size: 10px;
             display: flex;
-            gap: 6em;
+            gap: 1em;
         }
     }
 }
@@ -32,7 +32,7 @@
     cursor: pointer;
     display: flex;
     align-items: center;
-    padding: 0px 17px;
+    padding: 0px 13px;
     text-align: left;    
     border-radius: 12px;
     margin: 0px 10px;
@@ -98,9 +98,9 @@
 }
   
 .sidebarOpen {
-    width: 18em;
+    width: 22.5em;
     transition: width 0.6s ease;
-    padding: 0.5em 1.5em 0em 1.5em;
+    padding: 1.5em 1.5em 0em 1.5em;
 }
   
 .sidebarOpen .sidebarPosition span,
