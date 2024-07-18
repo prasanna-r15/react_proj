@@ -1,0 +1,32 @@
+@import './config.scss';
+
+  body {
+    background-size: cover;
+    line-height: 1.2 !important;
+    letter-spacing: 0.015em !important;
+    font-family: $primaryFont !important;
+    background-color: #222021;
+    background-size: cover;
+    color: $white;
+    overflow-y: auto;
+  }
+
+  h1{
+    font-size: 4em;
+  }
+  h1, h2, h3, h4, h5, h6{
+    font-family: $primaryFont !important;
+    font-size: 4em;
+  }
+  p, span{
+    font-family: $secondaryFont;
+  }
+
+  
+  input{
+    font-family: $secondaryFont !important;
+    border-radius: 36px !important;
+    border: 1px solid $white !important;
+    background: $grayColor4 !important;
+    color: $white !important;
+  }

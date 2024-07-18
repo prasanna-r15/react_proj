@@ -1,0 +1,129 @@
+@import "../../assets/less/config.scss";
+  
+.sidebar {
+    position: fixed;
+    top: 0;
+    width: 5em;
+    height: 100%;
+    transition: width 0.6s ease;
+    border-right: 1px #4d606e solid;
+    padding-top: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    .bottomBar{
+        margin-bottom: 1em;
+        display: flex;
+        flex-direction: column;
+        gap: 0.8em;
+        .logout{
+            color: #CC5F5F;
+        }
+        .upgrade{
+            font-size: 10px;
+            display: flex;
+            gap: 6em;
+        }
+    }
+}
+  
+.sidebar .sidebarPosition {
+    height: 50px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding: 0px 17px;
+    text-align: left;    
+    border-radius: 12px;
+    margin: 0px 10px;
+    gap: 6px;
+    img{
+        width: 2.5em;
+    }
+}
+
+.contactSupport{
+    background-color: #5E63661A;
+    border-radius: 16px !important;
+}
+
+.giftContainer{
+    background-color: #FFCC91;
+    display: block !important;
+    height: 65px !important;
+    padding-top: 12px !important;
+    .giftWrapper{
+        display: flex;
+        align-items: center;
+        padding-bottom: 8px !important;
+        color: #6E7079 !important;
+    }
+}
+
+.activeBar {
+    background-color: $primaryColor;
+    height: 3.5em;    
+    span{
+        color: $white !important;
+    }     
+}
+
+.companyName{
+    font-family: $fontVarient4 !important;
+    color: $black2 !important;
+    font-weight: 700 !important;
+    font-size: 1em !important;
+    padding: 0 !important;
+}
+  
+.sidebar .sidebar-position:hover {
+    border-right: 5px #e84a5f solid;
+}
+  
+.sidebar svg {
+    color: #e84a5f;
+    min-width: 25px;
+}
+  
+.sidebar span {
+    width: 0;
+    height: 0;
+    padding: 0 15px;
+    transition: width 0.6s ease;
+    color: #c9c9c9;
+    text-transform: uppercase;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+  
+.sidebarOpen {
+    width: 18em;
+    transition: width 0.6s ease;
+    padding: 0.5em 1.5em 0em 1.5em;
+}
+  
+.sidebarOpen .sidebarPosition span,
+.sidebarOpen .companyName {
+    display: block;
+    width: 100%;
+    height: auto;
+    font-family: $fontVarient3;
+    font-size: 14px;    
+    color: $black3;    
+}
+  
+.trigger {
+    height: 50px;
+    font-size: 24px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 1.5em;
+    margin: 0px 10px;
+    img{
+        width: 2em;
+    }
+}
+  
