@@ -30,6 +30,14 @@
     .navHandler{
         padding: 5px 21px 0px 21px;
         border-top: 1px solid #F1F3F9;
+        display: flex;
+        color: #8B8D97;
+        gap: 1em;
+        align-items: center;
+        .navContent{
+            display: flex;
+            gap: 1em;
+        }
         img{
             width: 20px;
             cursor: pointer;

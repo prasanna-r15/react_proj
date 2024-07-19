@@ -123,26 +123,26 @@ function Dashboard({ isOpen }) {
                     </GridRow>
                     <GridRow>
                         <GridColumn className={style.gridColumn}>
-                        <Card fluid className={`${style.cardCWrapper} ${style.uiCard}`}>               
-                                    <Card.Header className={style.header}>
-                                        <div className={style.cardHeader}>
-                                            <img src={travel} alt="iImg"/>
-                                            <Dropdown value={countryOptions[0].value} options={countryOptions} className={style.dropDown} />
-                                        </div>
-                                    </Card.Header>
-                                    <Card.Meta>
-                                        <div className={style.cardMeta}>
-                                            <div className={style.abandonedContent}>Abandoned Cart</div>
-                                            <div>Customers</div>
-                                        </div>
-                                    </Card.Meta>
-                                    <Card.Description>
-                                        <div className={style.cardMeta}>
-                                            <div className={style.cartMetaContent}>20% <span>+0.00%</span></div>
-                                            <div className={style.cartMetaContent}>30</div>
-                                        </div>
-                                    </Card.Description>
-                                </Card>  
+                            <Card fluid className={`${style.cardCWrapper} ${style.uiCard}`}>               
+                                <Card.Header className={style.header}>
+                                    <div className={style.cardHeader}>
+                                        <img src={travel} alt="iImg"/>
+                                        <Dropdown value={countryOptions[0].value} options={countryOptions} className={style.dropDown} />
+                                    </div>
+                                </Card.Header>
+                                <Card.Meta>
+                                    <div className={style.cardMeta}>
+                                        <div className={style.abandonedContent}>Abandoned Cart</div>
+                                        <div>Customers</div>
+                                    </div>
+                                </Card.Meta>
+                                <Card.Description>
+                                    <div className={style.cardMeta}>
+                                        <div className={style.cartMetaContent}>20% <span>+0.00%</span></div>
+                                        <div className={style.cartMetaContent}>30</div>
+                                    </div>
+                                </Card.Description>
+                            </Card>  
                         </GridColumn>
                     </GridRow>
                 </Grid>

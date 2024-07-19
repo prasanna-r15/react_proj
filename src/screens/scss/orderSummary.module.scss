@@ -1,0 +1,77 @@
+@import "../../assets/less/config.scss";
+
+.orderWrapper {
+    background-color: #EEF0FA;
+    transition: margin-left 0.6s ease;
+    margin-left: 5em;
+    margin-top: 1em;
+    .orderButtonWrapper{
+        display: flex;
+        font-family: $fontVarient3;
+        font-size: 16px;
+        color: $black;
+        padding: 1em;
+        justify-content: space-between;
+        align-items: center;
+        button{
+            background-color: #5570F1 !important;
+            color: $white !important;
+            border-radius: 12px !important;
+            font-family: $fontVarient3 !important;
+            font-size: 14px !important;
+        }
+    }
+    .cardWrapper{
+        .card{
+            box-shadow: none;
+            border-radius: 12px;
+        }        
+        .cardCWrapper{
+            padding: 1em;
+        }
+        .cardMeta{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            .abandonedContent{
+                color:red;
+                font-family: $fontVarient3;
+            }
+            .cartMetaContent{
+                color:$black;
+            }
+            span{
+                font-size: 10px;
+                color:#519C66;
+            }
+            .active{
+                display: flex;
+                align-items: center;
+                gap: 6px;
+            }
+        }
+    }
+}
+
+.negative{
+    color: #CC5F5F !important;
+}
+
+.cardHeader{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1em;
+    .dropDown{
+        color: #BEC0CA;
+        font-size: 13px;
+        font-family: $fontVarient3;
+    }
+    .markettingText{
+        color: $black;
+    }
+}
+
+.sidebarOpen {
+    margin-left: 22.5em; /* Margin when sidebar is open */
+}

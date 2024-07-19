@@ -8,7 +8,7 @@ const PieChart = () => {
     labels: ['Acquisition', 'Purchase', 'Retention'],
     datasets: [
       {
-        data: [10, 50, 30], // You can adjust the data values as needed
+        data: [10, 50, 30],
         backgroundColor: ['#5596ff', '#3b59ff', '#fbc167'],
         hoverBackgroundColor: ['#5596ff', '#3b59ff', '#fbc167'],
       },

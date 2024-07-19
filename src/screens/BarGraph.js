@@ -57,10 +57,10 @@ class BarGraph extends Component {
             }
           },
           axisBorder: {
-            show: false // Hide the base line
+            show: false
           },
           axisTicks: {
-            show: false // Hide the ticks on the x-axis
+            show: false
           }
         },
         yaxis: {
@@ -72,23 +72,23 @@ class BarGraph extends Component {
               return `${val / 1000}k`;
             },
             style: {
-              colors: '#BEC0CA' // Change color of y-axis labels
+              colors: '#BEC0CA'
             }
           },
           axisBorder: {
-            show: false // Hide the y-axis border line
+            show: false 
           },
           axisTicks: {
-            show: false // Hide the ticks on the y-axis
+            show: false
           }
         },
         grid: {
           yaxis: {
             lines: {
-              show: false // Hide horizontal grid lines
+              show: false
             }
           },
-          borderColor: 'transparent' // Hide the border lines of the chart
+          borderColor: 'transparent'
         },
         tooltip: {
           x: {

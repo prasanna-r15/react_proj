@@ -10,6 +10,14 @@ function Header({ isOpen, name }) {
         { key: 'ns', value: 'ns', text: 'Nanny’s Shop' },
         { key: 'ms', value: 'ms', text: 'My Shop' }
     ]
+
+    const handleNav = (() => {
+        if(name !== "Dashboard"){
+            return(
+                <div className={style.navContent}><div>/</div><div>{name}</div></div>
+            )
+        }
+    })
       
     return (
         <div className={`${style.headWrapper} ${isOpen ? style.sidebarOpen : ''}`}>
@@ -23,6 +31,8 @@ function Header({ isOpen, name }) {
             </div>
             <div className={style.navHandler}>
                 <img src={home} alt="hLogo" />
+                {handleNav()}
+                
             </div>
         </div>
     );

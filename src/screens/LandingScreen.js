@@ -13,6 +13,7 @@ import logout from "../assets/Images/Logout.webp"
 import { Icon } from 'semantic-ui-react'
 import Header from'./Header';
 import Dashboard from "./Dashboard";
+import OrderSummary from "./OrderSummary";
 
 function LandingScreen() {
 
@@ -49,7 +50,7 @@ function LandingScreen() {
         }
     ]
     const [isOpen, setIsOpen] = useState(false);
-    const [activeNav, setActiveNav] = useState(1);
+    const [activeNav, setActiveNav] = useState(2);
 
     const handleActiveNav = (e) => setActiveNav(e);
 
@@ -89,6 +90,10 @@ function LandingScreen() {
         if(activeNav === 1){
             return(
                 <Dashboard isOpen={isOpen}/>
+            )
+        }else if(activeNav === 2){
+            return(
+                <OrderSummary isOpen={isOpen}/>
             )
         }
         return(<></>)
