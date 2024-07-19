@@ -73,5 +73,139 @@
 }
 
 .sidebarOpen {
-    margin-left: 22.5em; /* Margin when sidebar is open */
+    margin-left: 22.5em;
+}
+
+.tableContentWrapper{
+    padding: 1em;
+    .tableinContent{
+        background-color: $white;
+        border-radius: 12px;
+        .table{
+            padding: 1em;
+        }
+    }
+    .tableHeadWrapper{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1em;
+        .heading{
+            font-size: 16px;
+            color: $black;
+            font-family: $fontVarient3;
+        }
+        .filterSection{
+            display: flex;
+            align-items: center;
+            gap: 1em;
+            .filterBtn{
+                display: flex !important;
+                align-items: center !important;
+                gap: 7px !important;
+                background-color: $white !important;
+                color: #53545C;
+                font-family: $fontVarient3;
+                border: 1px solid #53545C;
+                border-radius: 7px;
+                height: 36px !important;
+            }
+        }
+    }
+}
+
+.tableHeader{
+    color: #2C2D33 !important;
+    display: flex;
+    align-items: center;
+    gap: 17px;
+    img{
+        cursor: pointer;
+    }
+}
+
+.actionBtn{
+    border-radius: 8px !important;
+    font-family: $fontVarient3;
+}
+
+.actionGBtn{
+    background-color: #32936F29 !important;
+    color: #519C66 !important;
+}
+
+.actionBBtn{
+    background-color: #5570F129 !important;
+    color: #5570F1 !important;
+}
+
+.actionOBtn{
+    background-color: #FFF2E2 !important;    
+}
+
+.filter2Wrapper{
+    width: 100%;
+}
+
+.filter1Wrapper{    
+    padding: 1em;
+    .filterHeader{
+        font-family: $fontVarient3 !important;
+        font-size: 16px;
+        color:$black ;
+        text-align: left;
+        margin-bottom: 0.8em;
+    }
+    .order{
+        color: #53545C;
+        text-align: left;
+        font-size: 12px;
+        font-family: $fontVarient3 !important;
+        margin-bottom: 0.8em;
+    }
+    .checkWrapper{
+        display: flex;
+        gap: 1em;
+        margin-bottom: 0.8em;
+        .checkContent{
+            color: #83898C;
+            font-size: 14px;
+        }
+    }
+    .border{
+        border-top: 1px solid #F1F3F9;
+        margin-bottom: 0.8em;
+    }
+    .wrapper{
+        display: flex;
+        flex-direction: column;
+    }
+    .amountBWrapper{
+        display: flex;
+        gap: 1em;
+        margin-bottom: 0.8em;
+        .amountWrapper{
+            display: flex;
+            flex-direction: column;
+            .amountText{
+                color: $black;
+                font-size: 10px;
+                line-height: 15px;
+                text-align: left;
+            }
+        }
+    }
+    .filterBtn{
+        background-color: #5570F1;
+        width: 100%;
+        color: $white;
+        font-family: $fontVarient3;
+    }
+}
+
+.status{
+    color: #53545C;
+    font-size: 12px;
+    text-align: left;
+    margin-bottom: 0.8em;
 }

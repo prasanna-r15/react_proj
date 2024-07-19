@@ -59,9 +59,9 @@ function LandingScreen() {
     useEffect(() => {
         let timer;
         if (hovering) {
-            timer = setTimeout(() => setIsOpen(true), 200); // Adjust the delay as needed
+            timer = setTimeout(() => setIsOpen(true), 200);
         } else {
-            timer = setTimeout(() => setIsOpen(false), 200); // Adjust the delay as needed
+            timer = setTimeout(() => setIsOpen(false), 200);
         }
 
         return () => clearTimeout(timer);
