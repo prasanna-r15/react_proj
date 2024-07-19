@@ -50,7 +50,7 @@ function LandingScreen() {
         }
     ]
     const [isOpen, setIsOpen] = useState(false);
-    const [activeNav, setActiveNav] = useState(2);
+    const [activeNav, setActiveNav] = useState(1);
 
     const handleActiveNav = (e) => setActiveNav(e);
 
