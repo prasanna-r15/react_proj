@@ -6,18 +6,21 @@
     margin-left: 5em;
     margin-top: 1em;
     .cardWrapper{
-        display: flex;
-        padding: 1em;
-        .cardHeader{
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-bottom: 1em;
+        .card{
+            box-shadow: none;
+            border-radius: 12px;
+        }        
+        .cardCWrapper{
+            padding: 1em;
         }
         .cardMeta{
             display: flex;
             align-items: center;
             justify-content: space-between;
+            .abandonedContent{
+                color:red;
+                font-family: $fontVarient3;
+            }
             .cartMetaContent{
                 color:$black;
             }
@@ -25,10 +28,167 @@
                 font-size: 10px;
                 color:#519C66;
             }
+            .active{
+                display: flex;
+                align-items: center;
+                gap: 6px;
+            }
         }
     }
 }
 
+.recentWrapper{
+    padding: 1em !important;
+    .reactOrderText{
+        font-family: $fontVarient3;
+        color: $black;
+        font-size:16px;
+    }
+}
+
+.header{
+    margin-bottom: 3.3em;
+}
+
+.uiCard{
+    box-shadow: none !important;
+    border-radius: 12px !important;
+}
+
+.wrapper{
+    padding-top: 0em !important;
+}
+
+.wrapperC{
+    padding-bottom: 0em !important;
+}
+.cardHeader{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1em;
+    .dropDown{
+        color: #BEC0CA;
+        font-size: 13px;
+        font-family: $fontVarient3;
+    }
+    .markettingText{
+        color: $black;
+    }
+}
+
+.pieChartWrapper{
+    margin-top: 0 !important;
+}
+
+.pieChartSection{
+    margin: auto;
+}
+
+.allProducts{
+    background-color: #5570F1 !important;
+    border-radius: 12px !important;
+    padding: 1em !important;
+}
+
+.allProductsHeader{
+    margin-bottom: 5em;
+}
+
+.pieChart{
+    padding: 1em;
+}
+
 .sidebarOpen {
     margin-left: 22.5em; /* Margin when sidebar is open */
+}
+
+.doughnut{
+    height: 100% !important;
+}
+
+.orderWrapper{
+    display: flex;
+    color: $black;
+    justify-content: space-between;
+    padding: 13px 0px;
+    border-bottom: 1px solid darkgrey;
+    .dateWrapper{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        .date{
+            color: #45464E;
+            font-family: $fontVarient3; 
+        }
+        .status{
+            text-align: center;
+            padding: 2px;
+            border-radius: 8px;
+        }
+        .pending{            
+            background-color: #F57E771F;
+            color: #CC5F5B;
+        }
+        .completed{
+            background-color: #32936F1F;
+            color: #519C66;
+        }
+    }
+    .orderImgWrapper{
+        display: flex;
+        .productWrapper{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;  
+            .productName{
+                font-family: $fontVarient3;
+                color: #45464E;
+            }
+            .price{
+                color: #33343A;
+                font-size: 14px;
+                font-weight: bold;
+            }
+        }
+    }
+}
+
+.summaryWrapper{
+    color: black;
+    display: flex;
+    font-size: large;
+    padding: 1em;
+    // font-weight: 700;
+    justify-content: space-between;
+    font-family: $fontVarient3;
+    .summary{
+        display: flex;
+        align-items: center;
+        gap: 1em;
+        .dropDownsales{
+            color: #5570F1;
+            background-color: #5570F114;
+            padding: 5px;
+            height: 32px;
+            border-radius: 8px;
+            font-size: 14px;
+        }
+        .weekdropDown{
+            font-size: 14px;
+            height: 32px;
+        }
+    }
+}
+
+.rowWrapper{
+    padding-top: 0 !important;
+}
+
+.marketColumn{
+    padding-left: 0 !important;
+}
+
+.gridColumn{
+    padding-right: 0 !important;
 }

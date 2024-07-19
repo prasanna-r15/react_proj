@@ -16,7 +16,7 @@ function Header({ isOpen, name }) {
             <div className={style.headContainer}>
                 <div className={style.headName}>{name}</div>
                 <div className={style.profileWrapper}>
-                    <Dropdown value={countryOptions[0]}selection options={countryOptions} />
+                    <Dropdown value={countryOptions[0].value} selection options={countryOptions} className={style.dropDown}/>
                     <img src={notification} alt="nLogo" className={style.notification}/>
                     <img src={profile} alt="pLogo" />
                 </div>

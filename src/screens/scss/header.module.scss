@@ -16,6 +16,12 @@
             display: flex;
             align-items: center;
             gap: 1.5em;
+            .dropDown{                
+                color: black !important;
+                background-color: #FEF5EA;
+                border: none;
+                border-radius: 8px;
+            }
             .notification{
                 width: 20px;
             }

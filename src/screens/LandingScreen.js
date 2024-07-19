@@ -53,7 +53,7 @@ function LandingScreen() {
 
     const handleActiveNav = (e) => setActiveNav(e);
 
-    const [hovering, setHovering] = useState(true);
+    const [hovering, setHovering] = useState(false);
 
     useEffect(() => {
         let timer;
