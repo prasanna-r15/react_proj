@@ -1,15 +1,15 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import style from './scss/landingScreen.module.scss';
-import companyLogo from "../assets/Images/Graph.webp" 
-import setting from "../assets/Images/Setting.webp"
-import bag from "../assets/Images/Bag.webp"
-import category from "../assets/Images/Category.webp"
-import chat from "../assets/Images/Chat.webp"
-import folder from "../assets/Images/Folder.webp"
-import user from "../assets/Images/user.webp"
-import gift from "../assets/Images/gift.webp"
-import headphones from "../assets/Images/headphones.webp"
-import logout from "../assets/Images/Logout.webp"
+import companyLogo from "../assets/Images/Graph.png" 
+import setting from "../assets/Images/Setting.png"
+import bag from "../assets/Images/Bag.png"
+import category from "../assets/Images/Category.png"
+import chat from "../assets/Images/Chat.png"
+import folder from "../assets/Images/Folder.png"
+import user from "../assets/Images/user.png"
+import gift from "../assets/Images/gift.png"
+import headphones from "../assets/Images/headphones.png"
+import logout from "../assets/Images/Logout.png"
 import { Icon } from 'semantic-ui-react'
 import Header from'./Header';
 import Dashboard from "./Dashboard";
@@ -50,6 +50,7 @@ function LandingScreen() {
         }
     ]
     const [isOpen, setIsOpen] = useState(false);
+    const [navOpen, setNavOpen] = useState(false);
     const [activeNav, setActiveNav] = useState(1);
 
     const handleActiveNav = (e) => setActiveNav(e);
@@ -68,7 +69,9 @@ function LandingScreen() {
     }, [hovering]);
 
     const handleMouseOver = () => {
-        setHovering(true);
+        if (window.innerWidth > 540) {
+            setHovering(true);
+        }
     };
 
     const handleMouseOut = () => {
@@ -99,12 +102,21 @@ function LandingScreen() {
         return(<></>)
     }
 
+    const handleMobileNav = () => {
+        if (window.innerWidth <= 540) {
+            setNavOpen(!navOpen);
+            setIsOpen(true);
+            console.log('nav open');
+        }
+        console.log('entered');
+    }
+
     return (
         <>
             <div className={`${style.sidebar} ${isOpen ? style.sidebarOpen : ''}`} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>
                 <div>
                     <div className={style.trigger}>
-                        <img src={companyLogo} alt="cLogo" />
+                        <img src={companyLogo} alt="cLogo" onClick={() => handleMobileNav()} />
                         <span className={style.companyName}>Metrix</span>
                     </div>
                     <div className={style.navWrapper}>{renderNavBar()}</div>

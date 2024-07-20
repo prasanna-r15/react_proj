@@ -1,13 +1,13 @@
 import React from "react";
 import style from './scss/dashboard.module.scss';
 import { Card, Dropdown, GridColumn, Grid, GridRow } from 'semantic-ui-react'
-import icon from "../assets/Images/icon.webp";
-import userIcon from "../assets/Images/usericon.webp";
-import bagIcon from "../assets/Images/bagIcon.webp";
-import allProdIcon from "../assets/Images/allProdIcon.webp";
-import travel from "../assets/Images/travel.webp";
-import iphoneGold from "../assets/Images/iphoneGold.webp";
-import iphoneBlack from "../assets/Images/iphoneBlack.webp";
+import icon from "../assets/Images/icon.png";
+import userIcon from "../assets/Images/usericon.png";
+import bagIcon from "../assets/Images/bagIcon.png";
+import allProdIcon from "../assets/Images/allProdIcon.png";
+import travel from "../assets/Images/travel.png";
+import iphoneGold from "../assets/Images/iphoneGold.png";
+import iphoneBlack from "../assets/Images/iphoneBlack.png";
 import PieChart from './PieChart';
 import BarGraph from "./BarGraph";
 
@@ -151,7 +151,7 @@ function Dashboard({ isOpen }) {
 
     return (
         <div className={`${style.dashboardWrapper} ${isOpen ? style.sidebarOpen : ''}`}>            
-            <Grid padded className={style.cardWrapper}>
+            <Grid padded stackable className={style.cardWrapper}>
                 <GridColumn computer={5}>
                 <Card fluid className={style.uiCard}>
                     <Card.Content>
@@ -238,15 +238,15 @@ function Dashboard({ isOpen }) {
                 </Card>
                 </GridColumn>
             </Grid>
-            <Grid padded>
+            <Grid padded stackable>
                 <GridRow>
                     <Grid.Column computer={10}>
-                        <Grid padded className={style.cardWrapper}>
+                        <Grid padded stackable className={style.cardWrapper}>
                             <GridRow stretched className={style.rowWrapper}>
                                 <GridColumn computer={8} className={style.marketColumn}>{renderMarketingCard()}</GridColumn>
                                 <GridColumn computer={8}>{renderProductCard()}</GridColumn>
                             </GridRow>
-                            <GridRow stretched>
+                            <GridRow stretched stackable>
                                 <GridColumn className={style.gridColumn}>
                                     <Card fluid>
                                         <Card.Header>

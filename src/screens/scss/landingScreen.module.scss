@@ -124,5 +124,12 @@
     img{
         width: 2em;
     }
+    .closeIcon {
+        position: absolute;
+        top: 0;
+        right: 10px;
+    
+    }
+    // style={{position: 'absolute', top: '0', right: '10px', color: 'black'}}
 }
   

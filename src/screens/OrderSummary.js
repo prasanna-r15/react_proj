@@ -1,12 +1,12 @@
 import React, {useState} from "react";
 import style from './scss/orderSummary.module.scss';
 import { Card, Dropdown, GridColumn, Grid, Button, Icon, Table, Search,Checkbox, Pagination, Popup, Form, FormInput, FormGroup } from 'semantic-ui-react';
-import travel from "../assets/Images/travel.webp";
-import bagIcon from "../assets/Images/bagIcon.webp";
-import send from "../assets/Images/Send.webp";
-import calendar from "../assets/Images/Calendar.webp";
-import filter from "../assets/Images/filter.webp";
-import sort from "../assets/Images/sort.webp";
+import travel from "../assets/Images/travel.png";
+import bagIcon from "../assets/Images/bagIcon.png";
+import send from "../assets/Images/Send.png";
+import calendar from "../assets/Images/Calendar.png";
+import filter from "../assets/Images/filter.png";
+import sort from "../assets/Images/sort.png";
 import './less/orderSummary.scss';
 import staticData from '././customer.json';
 import 'react-day-picker/dist/style.css';

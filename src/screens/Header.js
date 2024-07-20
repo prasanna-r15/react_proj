@@ -1,9 +1,9 @@
 import React from "react";
 import style from './scss/header.module.scss';
 import { Dropdown } from 'semantic-ui-react';
-import notification from "../assets/Images/Notification.webp";
-import profile from "../assets/Images/profile.webp";
-import home from "../assets/Images/Home.webp";
+import notification from "../assets/Images/Notification.png";
+import profile from "../assets/Images/profile.png";
+import home from "../assets/Images/Home.png";
 
 function Header({ isOpen, name }) {
     const countryOptions = [
@@ -32,7 +32,6 @@ function Header({ isOpen, name }) {
             <div className={style.navHandler}>
                 <img src={home} alt="hLogo" />
                 {handleNav()}
-                
             </div>
         </div>
     );
