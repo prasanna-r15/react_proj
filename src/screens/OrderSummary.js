@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import style from './scss/orderSummary.module.scss';
-import { Card, Dropdown, GridColumn, Grid, Button, Icon, Table, Search,Checkbox, Pagination, Popup, Input } from 'semantic-ui-react';
+import { Card, Dropdown, GridColumn, Grid, Button, Icon, Table, Search,Checkbox, Pagination, Popup, Form, FormInput, FormGroup } from 'semantic-ui-react';
 import travel from "../assets/Images/travel.webp";
 import bagIcon from "../assets/Images/bagIcon.webp";
 import send from "../assets/Images/Send.webp";
@@ -25,6 +25,17 @@ function OrderSummary({ isOpen }) {
         { key: 'in-progress', text: 'In-Progress', value: 'In-Progress' },
         { key: 'pending', text: 'Pending', value: 'Pending' },
     ];
+
+    const uniqueCustomerNames = [...new Set(staticData.map(order => order.customerName))];
+    
+    const customerOptions = uniqueCustomerNames.map(name => ({
+        key: name.toLowerCase().replace(/ /g, '-'),
+        text: name,
+        value: name
+    }));
+
+    console.log(customerOptions);
+
 
     const [orders, setOrders] = useState(staticData);
     const [search, setSearch] = useState('');
@@ -204,20 +215,22 @@ function OrderSummary({ isOpen }) {
                     <Dropdown
                         placeholder='Select Action'
                         selection
-                        options={statusOptions}                                        
+                        options={customerOptions}                                        
                         className="filterDropDown"
                     />
                 </div>
                 <div className={style.status}>Amount</div>
                 <div className={style.amountBWrapper}>
-                    <div className={style.amountWrapper}>
-                        <div className={style.amountText}>From</div>
-                        <div><Input labelPosition='right' type='text' placeholder='Amount' className="inputAmount"></Input></div>
-                    </div>
-                    <div className={style.amountWrapper}>
-                        <div className={style.amountText}>To</div>
-                        <div><Input labelPosition='right' type='text' placeholder='Amount' className="inputAmount"></Input></div>
-                    </div>
+                <Form>
+                    <FormGroup widths='equal'>
+                    <FormInput
+                        label='From'
+                    />
+                    <FormInput
+                        label='To'                        
+                    />
+                    </FormGroup>
+                </Form>
                 </div>
                 <Button className={style.filterBtn}>Filter</Button>
             </div>            
@@ -427,8 +440,9 @@ function OrderSummary({ isOpen }) {
                                 />
                                 <span>of {totalPages} pages</span>
                                 <Pagination
+                                    className="paginationWrap"
                                     activePage={activePage}
-                                    onPageChange={(e, { activePage }) => handlePaginationChange(null, { value: activePage })}
+                                    onPageChange={handlePaginationChange}
                                     totalPages={totalPages}
                                     boundaryRange={0}
                                     siblingRange={0}
