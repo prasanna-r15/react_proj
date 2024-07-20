@@ -103,7 +103,6 @@ table{
     background-color: #5867dd;
     color: white;
     width: 50%;
-    // border-radius: 8px;
 }
   
 .DayPicker {
@@ -195,4 +194,12 @@ table{
     border: 1px solid #d9d9d9 !important;
     border-radius: 12px !important;
     
+}
+
+.ui.selection.dropdown {
+    min-width: 9em !important;
+}
+
+.ui.search>.results {
+    display: none !important;
 }

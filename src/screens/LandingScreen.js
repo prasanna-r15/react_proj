@@ -11,6 +11,7 @@ import gift from "../assets/Images/gift.png"
 import headphones from "../assets/Images/headphones.png"
 import logout from "../assets/Images/Logout.png"
 import { Icon } from 'semantic-ui-react'
+import { MdClose } from "react-icons/md";
 import Header from'./Header';
 import Dashboard from "./Dashboard";
 import OrderSummary from "./OrderSummary";
@@ -52,13 +53,27 @@ function LandingScreen() {
     const [isOpen, setIsOpen] = useState(false);
     const [navOpen, setNavOpen] = useState(false);
     const [activeNav, setActiveNav] = useState(1);
+    const giftContainerRef = useRef(null);
 
-    const handleActiveNav = (e) => setActiveNav(e);
+    const handleActiveNav = (e) => {
+        setActiveNav(e);
+        setTimeout(() => {
+            setIsOpen(false)
+        }, 200);
+    }
 
     const [hovering, setHovering] = useState(false);
 
     useEffect(() => {
-        let timer;
+        if (isOpen) {
+            giftContainerRef.current.style.height = '75px';
+        } else {
+            giftContainerRef.current.style.height = 'auto';
+        }
+    }, [isOpen])
+
+    useEffect(() => {
+        let timer = setTimeout(() => {}, 0);;
         if (hovering) {
             timer = setTimeout(() => setIsOpen(true), 200);
         } else {
@@ -90,15 +105,28 @@ function LandingScreen() {
     }
 
     const handleNavContent = () => {
-        if(activeNav === 1){
-            return(
-                <Dashboard isOpen={isOpen}/>
-            )
-        }else if(activeNav === 2){
-            return(
-                <OrderSummary isOpen={isOpen}/>
-            )
+        if (window.innerWidth > 540) {
+            if(activeNav === 1){
+                return(
+                    <Dashboard isOpen={isOpen}/>
+                )
+            }else if(activeNav === 2){
+                return(
+                    <OrderSummary isOpen={isOpen}/>
+                )
+            }
+        } else if (window.innerWidth <= 540 && !isOpen) {
+            if(activeNav === 1){
+                return(
+                    <Dashboard isOpen={isOpen}/>
+                )
+            }else if(activeNav === 2){
+                return(
+                    <OrderSummary isOpen={isOpen}/>
+                )
+            }
         }
+        
         return(<></>)
     }
 
@@ -106,9 +134,7 @@ function LandingScreen() {
         if (window.innerWidth <= 540) {
             setNavOpen(!navOpen);
             setIsOpen(true);
-            console.log('nav open');
         }
-        console.log('entered');
     }
 
     return (
@@ -118,6 +144,11 @@ function LandingScreen() {
                     <div className={style.trigger}>
                         <img src={companyLogo} alt="cLogo" onClick={() => handleMobileNav()} />
                         <span className={style.companyName}>Metrix</span>
+                        {window.innerWidth <= 540 && isOpen && (
+                            <div style={{color: 'black'}}>
+                                <MdClose color="black" onClick={() => setIsOpen(false)} />
+                            </div>
+                        )}
                     </div>
                     <div className={style.navWrapper}>{renderNavBar()}</div>
                 </div>
@@ -126,7 +157,7 @@ function LandingScreen() {
                         <img src={headphones} alt="category" />
                         <span>Contact Support</span>
                     </div>
-                    <div className={`${style.sidebarPosition} ${style.giftContainer}`}>
+                    <div ref={giftContainerRef} className={`${style.sidebarPosition} ${style.giftContainer}`}>
                         <div className={style.giftWrapper}>
                             <img src={gift} alt="category" />
                             <span>Free Gift Awaits You!</span>
@@ -139,7 +170,7 @@ function LandingScreen() {
                     </div>
                 </div>
             </div>
-            <Header isOpen={isOpen} name={navJson.find((e) => e.id === activeNav)?.name}/>
+            {!isOpen && <Header isOpen={isOpen} name={navJson.find((e) => e.id === activeNav)?.name}/>}
             {handleNavContent()}
         </>
     );

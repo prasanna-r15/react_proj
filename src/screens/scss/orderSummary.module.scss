@@ -83,23 +83,25 @@
         border-radius: 12px;
         .table{
             padding: 1em;
-            .customPagination{
+            overflow: scroll;
+
+        }
+        .customPagination{
+            display: flex;
+            justify-content: space-between;
+            .paginationWrapper{
                 display: flex;
-                justify-content: space-between;
-                .paginationWrapper{
-                    display: flex;
-                    color: $black !important;
-                    align-items: center;
-                    gap: 1em;
-                    .perPage{
-                        color: #A6A8B1;
-                        font-size: 14px;
-                        font-family: $fontVarient3;
-                    }
-                    .from{
-                        font-size: 14px;
-                        color: #666666;
-                    }
+                color: $black !important;
+                align-items: center;
+                gap: 1em;
+                .perPage{
+                    color: #A6A8B1;
+                    font-size: 14px;
+                    font-family: $fontVarient3;
+                }
+                .from{
+                    font-size: 14px;
+                    color: #666666;
                 }
             }
         }
@@ -108,7 +110,12 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
+        flex-wrap: wrap;
         padding: 1em;
+
+        @media screen and (max-width: '540px') {
+            gap: 1em;
+        }
         .heading{
             font-size: 16px;
             color: $black;
@@ -117,6 +124,7 @@
         .filterSection{
             display: flex;
             align-items: center;
+            flex-wrap: wrap;
             gap: 1em;
             .filterBtn{
                 display: flex !important;
@@ -128,6 +136,10 @@
                 border: 1px solid #53545C;
                 border-radius: 7px;
                 height: 36px !important;
+
+                @media screen and (max-width: '540px') {
+                    display: none;
+                }
             }
         }
     }
@@ -143,9 +155,15 @@
     }
 }
 
+.noResults {
+    text-align: center;
+}
+
 .actionBtn{
-    border-radius: 8px !important;
+    width: 100% !important;
+    text-wrap: nowrap;
     font-family: $fontVarient3;
+    border-radius: 8px !important;
 }
 
 .actionGBtn{
@@ -228,4 +246,13 @@
     font-size: 12px;
     text-align: left;
     margin-bottom: 0.8em;
+}
+
+@media screen and (max-width: '540px') {
+    .customPagination {
+        justify-content: start;
+        flex-direction: column;
+        gap: 1em;
+        margin-top: 1em;
+    }
 }
