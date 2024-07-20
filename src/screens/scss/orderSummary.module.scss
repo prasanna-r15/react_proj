@@ -83,6 +83,25 @@
         border-radius: 12px;
         .table{
             padding: 1em;
+            .customPagination{
+                display: flex;
+                justify-content: space-between;
+                .paginationWrapper{
+                    display: flex;
+                    color: $black !important;
+                    align-items: center;
+                    gap: 1em;
+                    .perPage{
+                        color: #A6A8B1;
+                        font-size: 14px;
+                        font-family: $fontVarient3;
+                    }
+                    .from{
+                        font-size: 14px;
+                        color: #666666;
+                    }
+                }
+            }
         }
     }
     .tableHeadWrapper{

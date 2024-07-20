@@ -31,7 +31,7 @@ function OrderSummary({ isOpen }) {
     const [statusFilter, setStatusFilter] = useState('');
     const [sortConfig, setSortConfig] = useState({ key: null, direction: 'ascending' });
     const [activePage, setActivePage] = useState(1);
-    const itemsPerPage = 10;
+    const [itemsPerPage, setItemsPerPage] = useState(10);
     const [isDateRangeChecked, setIsDateRangeChecked] = useState(false);
     const [selectedRange, setSelectedRange] = useState({ from: undefined, to: undefined });
     const [selectingFrom, setSelectingFrom] = useState(true);
@@ -39,6 +39,10 @@ function OrderSummary({ isOpen }) {
     const handleDateRangeChange = (e) => {
         setIsDateRangeChecked(!isDateRangeChecked);
     };
+
+    const handleItemsPerPageChange = (e, { value }) => {
+        setItemsPerPage(value);
+      };
 
     const handleDayClick = (day) => {
         if (selectingFrom) {
@@ -107,6 +111,14 @@ function OrderSummary({ isOpen }) {
     console.log("selectedRange", selectedRange);
     const paginatedOrders = filteredOrders.slice((activePage - 1) * itemsPerPage, activePage * itemsPerPage);
 
+    const totalPages = Math.ceil(filteredOrders.length / itemsPerPage);
+    const pageOptions = Array.from({ length: totalPages }, (_, i) => ({
+        key: i + 1,
+        text: i + 1,
+        value: i + 1,
+    }));
+
+
     const renderTableContent = () => {
         return(
             <Table celled selectable>
@@ -152,10 +164,10 @@ function OrderSummary({ isOpen }) {
                         </Table.Cell>
                         <Table.Cell>
                             <Button
-                            className={`${style.actionBtn} ${order.status === 'Completed' ? style.actionGBtn :
-                                order.status === 'In-Progress' ? style.actionBBtn : style.actionOBtn}`}                    
+                            className={`${style.actionBtn} ${order.action === 'Completed' ? style.actionGBtn :
+                                order.action === 'In-Progress' ? style.actionBBtn : style.actionOBtn}`}                    
                             >
-                                {order.status}
+                                {order.action   }
                             </Button>
                         </Table.Cell>
                         </Table.Row>
@@ -389,13 +401,45 @@ function OrderSummary({ isOpen }) {
                     
                     <div className={style.table}>
                         {renderTableContent()}
-                        <div>
-                            <Pagination
-                                activePage={activePage}
-                                onPageChange={handlePaginationChange}
-                                totalPages={Math.ceil(filteredOrders.length / itemsPerPage)}
-                                style={{ marginTop: '20px' }}
-                            />
+                        <div className={style.customPagination}>
+                            <div className={style.paginationWrapper}>
+                                <Dropdown
+                                className="custom-dropdown"
+                                placeholder='Items per page'
+                                selection
+                                options={[10, 20, 50].map(number => ({ key: number, text: number, value: number }))}
+                                value={itemsPerPage}
+                                onChange={handleItemsPerPageChange}
+                                />
+                                <div className={style.perPage}>Items per page</div>
+                                <div className={style.from}>
+                                    {`${(activePage - 1) * itemsPerPage + 1}-${Math.min(activePage * itemsPerPage, filteredOrders.length)} of ${filteredOrders.length} items`}
+                                </div>
+                            </div>
+                            <div className={style.paginationWrapper}>
+                                <Dropdown
+                                    className="custom-dropdown"
+                                    placeholder='Page'
+                                    selection
+                                    options={pageOptions}
+                                    value={activePage}
+                                    onChange={handlePaginationChange}
+                                />
+                                <span>of {totalPages} pages</span>
+                                <Pagination
+                                    activePage={activePage}
+                                    onPageChange={(e, { activePage }) => handlePaginationChange(null, { value: activePage })}
+                                    totalPages={totalPages}
+                                    boundaryRange={0}
+                                    siblingRange={0}
+                                    ellipsisItem={null}
+                                    firstItem={null}
+                                    lastItem={null}
+                                    prevItem={{ content: <Icon name='angle left' />, icon: true }}
+                                    nextItem={{ content: <Icon name='angle right' />, icon: true }}
+                                />
+                            </div>
+
                         </div>
                     </div>
                 </div>
