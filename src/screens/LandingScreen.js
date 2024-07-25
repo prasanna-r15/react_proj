@@ -51,7 +51,6 @@ function LandingScreen() {
         }
     ]
     const [isOpen, setIsOpen] = useState(false);
-    const [navOpen, setNavOpen] = useState(false);
     const [activeNav, setActiveNav] = useState(1);
     const giftContainerRef = useRef(null);
 
@@ -132,7 +131,6 @@ function LandingScreen() {
 
     const handleMobileNav = () => {
         if (window.innerWidth <= 540) {
-            setNavOpen(!navOpen);
             setIsOpen(true);
         }
     }

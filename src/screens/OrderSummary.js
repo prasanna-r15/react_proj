@@ -35,9 +35,7 @@ function OrderSummary({ isOpen }) {
     }));
 
     const [orders, setOrders] = useState(staticData);
-    const [ordersDB, setOrdersDB] = useState(staticData);
     const [search, setSearch] = useState('');
-    const [statusFilter, setStatusFilter] = useState('');
     const [sortConfig, setSortConfig] = useState({ key: null, direction: 'ascending' });
     const [activePage, setActivePage] = useState(1);
     const [itemsPerPage, setItemsPerPage] = useState(10);
@@ -82,13 +80,9 @@ function OrderSummary({ isOpen }) {
     const handleSearch = (event, { value }) => {
         if (value !== '') {
             setSearch(event.target.value);
-        const searchResult = [...ordersDB].filter((e) => e.customerName.toLowerCase().startsWith(value.toLowerCase()))
+        const searchResult = staticData.filter((e) => e.customerName.toLowerCase().startsWith(value.toLowerCase()))
         setOrders(searchResult)
         }
-    };
-
-    const handleStatusFilter = (event, data) => {
-        setStatusFilter(data.value);
     };
 
     const handleSort = (key) => {
@@ -103,7 +97,7 @@ function OrderSummary({ isOpen }) {
         setActivePage(activePage);
     };
 
-    const sortedOrders = [...orders].sort((a, b) => {
+    const sortedOrders = orders.sort((a, b) => {
         if (sortConfig.key) {
             if (a[sortConfig.key] < b[sortConfig.key]) {
                 return sortConfig.direction === 'ascending' ? -1 : 1;
@@ -117,8 +111,7 @@ function OrderSummary({ isOpen }) {
 
     const filteredOrders = sortedOrders.filter(order => {
         return (
-            order.customerName.toLowerCase().includes(search.toLowerCase()) &&
-            (statusFilter ? order.status === statusFilter : true)
+            order.customerName.toLowerCase().includes(search.toLowerCase())
         );
     });
     const paginatedOrders = filteredOrders.slice((activePage - 1) * itemsPerPage, activePage * itemsPerPage);

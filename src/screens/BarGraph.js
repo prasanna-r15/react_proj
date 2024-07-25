@@ -34,8 +34,6 @@ class BarGraph extends Component {
             borderRadius: 5,
             barHeight: '100%',
             colors: {
-              backgroundBarColors: [],
-              backgroundBarOpacity: 1,
               colors: ['#5570F1']
             },
             dataLabels: {
@@ -55,12 +53,6 @@ class BarGraph extends Component {
             style: {
               colors: '#BEC0CA'
             }
-          },
-          axisBorder: {
-            show: false
-          },
-          axisTicks: {
-            show: false
           }
         },
         yaxis: {
@@ -75,12 +67,6 @@ class BarGraph extends Component {
               colors: '#BEC0CA'
             }
           },
-          axisBorder: {
-            show: false 
-          },
-          axisTicks: {
-            show: false
-          }
         },
         grid: {
           yaxis: {
@@ -90,16 +76,6 @@ class BarGraph extends Component {
           },
           borderColor: 'transparent'
         },
-        tooltip: {
-          x: {
-            formatter: function(val) {
-              const date = new Date(val);
-              const month = date.toLocaleString('default', { month: 'short' });
-              const day = date.getDate();
-              return `${month} ${day}`;
-            }
-          }
-        }
       }
     };
   }
@@ -111,7 +87,6 @@ class BarGraph extends Component {
           <div id="chart">
             <ReactApexChart options={this.state.options} series={this.state.series} type="bar" height={380} />
           </div>
-          <div id="html-dist"></div>
         </div>
       </>
     );
