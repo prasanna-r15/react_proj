@@ -12,51 +12,51 @@ export default function ValentineLanding() {
 
   const images = [
   {
-    src: "/assets/Images/1.jpeg",
+    src: "/1.jpeg",
     text: "The day you entered my life, every missing piece quietly fell into place ❤️"
   },
   {
-    src: "/assets/Images/2.jpeg",
+    src: "/2.jpeg",
     text: "Your smile is my favorite sight, my safest place, my forever comfort 💖"
   },
   {
-    src: "/assets/Images/3.jpeg",
+    src: "/3.jpeg",
     text: "With you by my side, even forever feels too short 💍"
   },
   {
-    src: "/assets/Images/4.jpeg",
+    src: "/4.jpeg",
     text: "Every memory with you is a chapter I want to relive again and again 💕"
   },
   {
-    src: "/assets/Images/5.jpeg",
+    src: "/5.jpeg",
     text: "You turned my ordinary life into a love story I never knew I needed 💘"
   },
   {
-    src: "/assets/Images/6.jpeg",
+    src: "/6.jpeg",
     text: "In the loud chaos of the world, your presence is my calm and my peace 🤍"
   },
   {
-    src: "/assets/Images/7.jpeg",
+    src: "/7.jpeg",
     text: "Loving you isn’t a choice — it’s the most natural thing my heart does 💓"
   },
   {
-    src: "/assets/Images/8.jpeg",
+    src: "/8.jpeg",
     text: "No matter where life leads us, my heart will always find its way back to you 🌹"
   },
   {
-    src: "/assets/Images/9.jpeg",
+    src: "/9.jpeg",
     text: "When everything feels uncertain, holding onto you feels like home 🤍"
   },
   {
-    src: "/assets/Images/10.mp4",
+    src: "/10.mp4",
     text: "Every heartbeat of mine whispers your name, over and over 💓"
   },
   {
-    src: "/assets/Images/11.jpeg",
+    src: "/11.jpeg",
     text: "With you, even the simplest moments become the most precious memories 🌹"
   },
   {
-    src: "/assets/Images/12.jpeg",
+    src: "/12.jpeg",
     text: "No matter how many tomorrows come, I know my forever is you ❤️"
   }
 ];
@@ -124,4 +124,5 @@ be my always 💘
     </>
   );
 }
+
 
