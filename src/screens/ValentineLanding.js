@@ -12,7 +12,7 @@ export default function ValentineLanding() {
 
   const images = [
   {
-    src: "/1.jpeg",
+    src: "/v1.jpeg",
     text: "The day you entered my life, every missing piece quietly fell into place ❤️"
   },
   {
@@ -124,5 +124,6 @@ be my always 💘
     </>
   );
 }
+
 
 
