@@ -48,7 +48,7 @@ export default function ValentineLanding() {
     text: "When everything feels uncertain, holding onto you feels like home 🤍"
   },
   {
-    src: "/10.mp4",
+    src: "/10.png",
     text: "Every heartbeat of mine whispers your name, over and over 💓"
   },
   {
@@ -124,6 +124,7 @@ be my always 💘
     </>
   );
 }
+
 
 
 
