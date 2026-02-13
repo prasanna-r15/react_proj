@@ -12,39 +12,39 @@ export default function ValentineLanding() {
 
   const images = [
   {
-    src: "/v1.jpeg",
+    src: "/1.png",
     text: "The day you entered my life, every missing piece quietly fell into place ❤️"
   },
   {
-    src: "/2.jpeg",
+    src: "/2.png",
     text: "Your smile is my favorite sight, my safest place, my forever comfort 💖"
   },
   {
-    src: "/3.jpeg",
+    src: "/3.png",
     text: "With you by my side, even forever feels too short 💍"
   },
   {
-    src: "/4.jpeg",
+    src: "/4.png",
     text: "Every memory with you is a chapter I want to relive again and again 💕"
   },
   {
-    src: "/5.jpeg",
+    src: "/5.png",
     text: "You turned my ordinary life into a love story I never knew I needed 💘"
   },
   {
-    src: "/6.jpeg",
+    src: "/6.png",
     text: "In the loud chaos of the world, your presence is my calm and my peace 🤍"
   },
   {
-    src: "/7.jpeg",
+    src: "/7.png",
     text: "Loving you isn’t a choice — it’s the most natural thing my heart does 💓"
   },
   {
-    src: "/8.jpeg",
+    src: "/8.png",
     text: "No matter where life leads us, my heart will always find its way back to you 🌹"
   },
   {
-    src: "/9.jpeg",
+    src: "/9.png",
     text: "When everything feels uncertain, holding onto you feels like home 🤍"
   },
   {
@@ -52,11 +52,11 @@ export default function ValentineLanding() {
     text: "Every heartbeat of mine whispers your name, over and over 💓"
   },
   {
-    src: "/11.jpeg",
+    src: "/11.png",
     text: "With you, even the simplest moments become the most precious memories 🌹"
   },
   {
-    src: "/12.jpeg",
+    src: "/12.png",
     text: "No matter how many tomorrows come, I know my forever is you ❤️"
   }
 ];
@@ -124,6 +124,7 @@ be my always 💘
     </>
   );
 }
+
 
 
 
