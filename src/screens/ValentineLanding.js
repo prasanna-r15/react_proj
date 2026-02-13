@@ -5,7 +5,6 @@ import ValentineLoveInput from "./ValentineLoveInput";
 import ValentineLetter from "./ValentineLetter";
 import FloatingHearts from "./FloatingHearts";
 import BackgroundMusic from "./BackgroundMusic";
-import Confetti from "./Confetti";
 import SecretUnlock from "./SecretUnlock";
 
 export default function ValentineLanding() {
@@ -125,3 +124,4 @@ be my always 💘
     </>
   );
 }
+
