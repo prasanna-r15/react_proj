@@ -36,3 +36,89 @@
     transform: rotate(360deg);
   }
 }
+
+.floating-heart {
+  position: fixed;
+  bottom: -40px;
+  animation: floatUp 6s linear forwards;
+  opacity: 0.8;
+  z-index: 999;
+}
+
+@keyframes floatUp {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-120vh);
+    opacity: 0;
+  }
+}
+
+.confetti {
+  position: fixed;
+  top: -10px;
+  width: 10px;
+  height: 10px;
+  animation: fall 3s linear;
+  z-index: 9999;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(120vh) rotate(360deg);
+  }
+}
+
+.romantic-img {
+  width: 85vw;
+  max-width: 320px;
+  border-radius: 20px;
+  animation:
+    heartbeat 2s infinite,
+    zoomPan 6s ease-in-out infinite;
+}
+
+@keyframes heartbeat {
+  0% { transform: scale(1); }
+  25% { transform: scale(1.05); }
+  50% { transform: scale(1); }
+}
+
+@keyframes zoomPan {
+  0% { object-position: center; }
+  50% { object-position: top; }
+}
+
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  50% { transform: translateX(5px); }
+  75% { transform: translateX(-5px); }
+  100% { transform: translateX(0); }
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
